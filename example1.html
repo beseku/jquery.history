@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" xml:lang="en-gb">
+<head>
+	<title>Example usage:jquery.history.js</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="en-gb" />
+	<meta name="robots" content="all" />
+	<meta http-equiv="imagetoolbar" content="false" />
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+	<meta name="author" content="Ben Sekulowicz-Barclay" />
+	<meta name="Copyright" content="Copyright (c) 2009" />
+	<meta name="description" content="jQuery plugin allowing you to test for previously visited sites on the client side. Written by Ben Sekulowicz-Barclay, (www.beseku.com)" />
+	<meta name="keywords" content="jquery, plugin, history, visited, beseku" />
+	
+	<!-- JS -->
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.history.mini.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('body > ol > li').each(function() {				
+				$(this).css('backgroundColor', ($.history.test($('a', $(this)).attr('href')))? "#D1FFD1": "#FFD1D1");							
+			});
+		});
+	</script>
+	
+	<!-- CSS -->
+	<style type="text/css">
+		body {
+			background:#FFFFFF;
+			color:#393939;
+			font-size:62.5%;
+			margin:0;
+			padding:0;
+		}
+	
+		body ol {
+			font:normal normal 200 1em/3em Georgia, Serif;
+			list-style:none;
+			margin:3em 3em 0;
+			padding:0;
+			text-indent:none;
+		}
+		
+		body ol li {
+			border: solid 0.05em #C6C6C6;
+			font-size:2em;
+			line-height:1.5em;
+			margin:0 0 1.5em;
+			padding:0.75em;
+		}
+		
+		body ol li a {
+			color:#AA0000;
+			text-decoration: none;			
+		}
+		
+		body ol li a:hover {
+			color:#0000AA;
+			text-decoration: underline;			
+		}
+		
+		body ol li a:visited {
+			color:#00AA00;		
+		}
+	</style>
+</head>
+<body>
+	<ol>		
+		<li><a href="http://www.arsenal.com/">Arsenal</a></li>
+		<li><a href="http://www.bbc.com/">BBC</a></li>
+		<li><a href="http://www.beseku.com/">Beseku</a></li>
+		<li><a href="http://www.flickr.com/">Flickr</a></li>
+		<li><a href="http://www.google.com/">Google</a></li>
+		<li><a href="http://www.outsideline.co.uk/">Outside Line</a></li>
+		<li><a href="http://twitter.com/">Twitter</a></li>
+		<li><a href="http://www.yahoo.com/">Yahoo</a></li>
+	</ol>
+</body>
+</html>	
